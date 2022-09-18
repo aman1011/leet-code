@@ -26,5 +26,20 @@ public class LengthOfLastWord {
             return a.length();
         }
     }
+    //Better solution 100% rate
+    public int lengthOfLastWord(String s) {
+        if(s.length()==1)
+            return 1;
+        int lastLength=0;
+        for(int i=s.length()-1;i>=0;i--) {
+            if(s.charAt(i)==' ' && lastLength>0)
+                return lastLength;
+            if(s.charAt(i)!=' ')
+              lastLength++;
+           
+        }
+       
+        return lastLength;
+    }
     
 }
